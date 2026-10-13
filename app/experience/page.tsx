@@ -294,7 +294,7 @@ export default function ExperiencePage() {
 <div className="w-1 bg-secondary h-4 animate-pulse" style={{ "animationDelay": "400ms" }}></div>
 </div>
 <p className="font-body-sm text-body-sm text-on-surface-variant italic mt-1">
-              "Music that does not demand listening, yet wraps around the mind like cool silk."
+              &ldquo;Music that does not demand listening, yet wraps around the mind like cool silk.&rdquo;
             </p>
 </div>
 </div>

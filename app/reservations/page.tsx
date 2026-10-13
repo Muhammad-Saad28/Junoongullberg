@@ -284,7 +284,7 @@ export default function ReservationsPage() {
 <div className="space-y-space-sm relative z-10">
 <span className="font-caption-folio text-caption-folio text-secondary-fixed uppercase tracking-[0.28em]">Immediate Engagement</span>
 <h3 className="font-headline-sm text-headline-sm text-on-primary">The Concierge Desk</h3>
-<p className="font-body-md text-body-md text-outline-variant">For same-evening seating, special bespoke menus, or urgent itinerary shifts, connect directly with our Maitre d'Hotel.</p>
+<p className="font-body-md text-body-md text-outline-variant">For same-evening seating, special bespoke menus, or urgent itinerary shifts, connect directly with our Maitre d&apos;Hotel.</p>
 <div className="space-y-space-xs pt-space-xs">
 <a className="flex items-center gap-space-xs text-on-primary hover:text-secondary-fixed transition-colors" href="tel:+924235789200">
 <span className="material-symbols-outlined text-[18px] text-secondary-fixed">phone</span>

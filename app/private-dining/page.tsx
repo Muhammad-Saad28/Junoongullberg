@@ -260,7 +260,7 @@ export default function PrivateDiningPage() {
 </div>
 </div>
 <p className="font-body-sm text-body-sm text-on-surface-variant">
-              "We take joy in crafting menus that honor your family or institutional legacy. For urgent banquet engagements within 48 hours, please reach me directly."
+              &ldquo;We take joy in crafting menus that honor your family or institutional legacy. For urgent banquet engagements within 48 hours, please reach me directly.&rdquo;
             </p>
 <div className="space-y-space-xs pt-space-xs">
 <div className="flex items-center gap-space-sm text-body-sm text-body-sm text-on-surface">

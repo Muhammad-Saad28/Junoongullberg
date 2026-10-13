@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
-
 export default function WhatsAppButton() {
-  const [hovered, setHovered] = useState(false);
-
   // Official Junoon Concierge WhatsApp link with prefilled booking inquiry
   const phoneNumber = "924235789200";
   const defaultMessage = encodeURIComponent(
@@ -15,44 +11,40 @@ export default function WhatsAppButton() {
   return (
     <aside
       aria-label="WhatsApp Concierge"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center group pointer-events-auto"
+      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 pointer-events-auto"
     >
-      {/* Tooltip / Label for Desktop */}
-      <div
-        className={`hidden sm:flex items-center mr-3 px-3.5 py-1.5 rounded-full bg-[#1b120a]/95 backdrop-blur-md border border-[#7b581d]/40 text-[#ede5dc] text-[11px] font-medium tracking-wider uppercase shadow-xl transition-all duration-300 pointer-events-none select-none ${
-          hovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2"
-        }`}
-      >
-        <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse mr-2" />
-        <span className="text-[#ffd089] mr-1">WhatsApp</span> Concierge
-      </div>
-
-      {/* Floating Action Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Junoon Restaurant on WhatsApp"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)] hover:shadow-[0_12px_32px_rgba(37,211,102,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 ring-2 ring-[#ffd089]/60 hover:ring-[#ffd089]"
+        title="Chat with Junoon Concierge on WhatsApp"
+        className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1c120a] hover:bg-[#291b0f] text-white shadow-[0_8px_24px_rgba(0,0,0,0.5)] hover:shadow-[0_12px_32px_rgba(123,88,29,0.45)] hover:scale-105 active:scale-95 transition-all duration-300 border border-[#7b581d]/50 ring-2 ring-[#ffd089]/40 hover:ring-[#ffd089] group"
       >
-        {/* Subtle Pulse Animation Ring */}
-        <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping pointer-events-none [animation-duration:3s]" />
+        {/* Warm Gold Pulse Animation Ring */}
+        <span className="absolute inset-0 rounded-full bg-[#ffd089]/20 animate-ping pointer-events-none [animation-duration:3s]" />
 
-        {/* WhatsApp Official SVG Icon */}
+        {/* Official WhatsApp SVG Logo (Zero Green — Luxury Gold on Deep Brown) */}
         <svg
-          className="w-7 h-7 sm:w-8 sm:h-8 relative z-10 fill-current drop-shadow-sm transition-transform duration-300 group-hover:rotate-6"
+          className="w-8 h-8 sm:w-9 sm:h-9 relative z-10 drop-shadow-md transition-transform duration-300 group-hover:scale-110"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M17.507 14.307l-.009.075c-2.399-1.2-2.823-1.287-3.227-.688l-.582.79c-.292.408-.59.458-1.126.192-.536-.265-2.072-.763-3.95-2.437-1.456-1.298-2.44-2.901-2.726-3.392-.286-.49-.03-.756.237-1.022.24-.24.536-.622.803-.933.268-.31.357-.532.536-.888.179-.355.09-.665-.045-.932-.134-.267-1.127-2.716-1.545-3.722-.407-.98-.82-.847-1.126-.862-.29-.015-.624-.018-.958-.018s-.877.125-1.334.624c-.457.5-1.748 1.708-1.748 4.162s1.79 4.827 2.038 5.16c.248.334 3.522 5.378 8.533 7.542 1.192.515 2.123.823 2.848 1.054 1.198.38 2.288.327 3.15.198.96-.143 2.95-1.205 3.367-2.37.417-1.165.417-2.164.293-2.37-.123-.207-.46-.33-.972-.586z" />
-          <path d="M12.004 2c-5.517 0-9.993 4.476-9.993 9.993 0 1.763.459 3.483 1.331 5.002L2 22l5.161-1.312c1.464.798 3.116 1.22 4.843 1.22 5.518 0 9.994-4.476 9.994-9.993 0-5.517-4.476-10.015-9.994-10.015zm0 18.286c-1.536 0-3.04-.413-4.35-1.194l-.312-.185-3.23.821.862-3.148-.204-.326c-.859-1.368-1.312-2.955-1.312-4.582 0-4.595 3.738-8.333 8.336-8.333 4.597 0 8.335 3.738 8.335 8.333 0 4.595-3.738 8.336-8.335 8.336z" />
+          {/* Warm Royal Gold Speech Bubble with Tail */}
+          <path
+            fill="#ffd089"
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"
+          />
+          {/* Deep Charcoal Brown Handset */}
+          <path
+            fill="#1c120a"
+            d="M17.47 14.38c-.3-.15-1.78-.88-2.05-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.95 1.18-.18.2-.35.23-.65.08-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.68-2.08-.18-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.24-.24-.59-.49-.51-.67-.52-.18-.01-.38-.01-.58-.01s-.53.08-.8.38c-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.12 3.24 5.14 4.54.72.31 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35z"
+          />
         </svg>
 
-        {/* Online Status Dot */}
-        <span className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-[#180e08] border-2 border-white flex items-center justify-center">
-          <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+        {/* Online Status Dot in Gold */}
+        <span className="absolute top-1 right-1 w-3.5 h-3.5 rounded-full bg-[#180e08] border-2 border-[#1c120a] flex items-center justify-center">
+          <span className="w-2 h-2 rounded-full bg-[#ffd089]" />
         </span>
       </a>
     </aside>

@@ -7,29 +7,21 @@ import {
 } from '@/components/AnimationPrimitives';
 import HomePageReservationForm from '@/components/HomePageReservationForm';
 import HorizontalStoryScroll from '@/components/HorizontalStoryScroll';
+import SignatureDishesCarousel from '@/components/SignatureDishesCarousel';
+import SplashScreen from '@/components/SplashScreen';
 
 export default function HomePage() {
   return (
     <main className="w-full bg-surface min-h-screen">
+      {/* Luxury Cinematic Entry Splash Screen */}
+      <SplashScreen />
+
       <div className="flex flex-col w-full">
 
-        {/* ─── PHASE 2: HERO SECTION (YumRush Inspired) ─── */}
-        <section className="relative w-full min-h-[85vh] lg:min-h-[88vh] pt-24 sm:pt-28 pb-14 sm:pb-16 bg-surface overflow-hidden flex flex-col justify-center">
+        {/* ─── PHASE 2: HERO SECTION ─── */}
+        <section className="relative w-full pb-10 sm:pb-14 bg-surface overflow-hidden flex flex-col justify-center">
           
-          {/* Arch Shape: Rich Warm Brown Architectural Alcove + Image (Desktop) */}
-          <div className="hidden lg:flex absolute top-0 left-[140px] xl:left-[160px] w-[340px] xl:w-[360px] bg-gradient-to-b from-[#26180e] via-[#1f130b] to-[#160d08] border-x border-b border-[#7b581d]/30 z-0 flex-col items-center justify-end pt-[105px] pb-4 px-3 rounded-b-full shadow-2xl pointer-events-none">
-            <FadeIn delay={0.1}>
-              <div className="w-[265px] h-[265px] xl:w-[285px] xl:h-[285px] relative pointer-events-auto shrink-0 rounded-full overflow-hidden shadow-2xl ring-2 ring-secondary/35 ring-offset-2 ring-offset-[#160d08]">
-                <img 
-                  src="/images/desi_classics.png" 
-                  alt="Junoon Culinary Heritage" 
-                  className="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-1000" 
-                />
-              </div>
-            </FadeIn>
-          </div>
-
-          {/* Vertical Nav Layer (Left Strip - Desktop) */}
+          {/* Vertical Category Strip on Desktop (Far Left) */}
           <div className="hidden lg:flex absolute top-[24%] left-6 xl:left-8 w-[60px] flex-col items-center justify-center gap-20 xl:gap-24 z-20">
             <span className="-rotate-90 whitespace-nowrap font-label-uppercase text-outline-variant tracking-[0.25em] text-[10px] uppercase font-bold hover:text-primary transition-colors cursor-pointer py-1">Tandoor</span>
             <span className="-rotate-90 whitespace-nowrap font-label-uppercase text-outline-variant tracking-[0.25em] text-[10px] uppercase font-bold hover:text-primary transition-colors cursor-pointer py-1">Karahi</span>
@@ -37,105 +29,69 @@ export default function HomePage() {
             <span className="-rotate-90 whitespace-nowrap font-label-uppercase text-outline-variant tracking-[0.25em] text-[10px] uppercase font-bold hover:text-primary transition-colors cursor-pointer py-1">BBQ</span>
           </div>
 
-          {/* Mobile Arch Alcove & Plate (Faithfully mirrors desktop architectural alcove) */}
-          <div className="lg:hidden w-full flex flex-col items-center justify-center mt-2 mb-4 z-20 relative px-4">
-            {/* Category Pills Bar on Mobile */}
-            <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
-              <span className="px-3 py-1 bg-surface-container-high border border-secondary/20 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] text-outline">Tandoor</span>
-              <span className="px-3 py-1 bg-surface-container-high border border-secondary/20 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] text-outline">Karahi</span>
-              <span className="px-3.5 py-1 bg-primary text-secondary-fixed border border-secondary/40 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] shadow-sm">Signatures</span>
-              <span className="px-3 py-1 bg-surface-container-high border border-secondary/20 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] text-outline">BBQ</span>
-            </div>
+          {/* ─── HERO UPPER STAGE: Arch (Left) & Brand Content (Right) ─── */}
+          <div className="relative w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 pt-20 sm:pt-24 lg:pt-28">
 
-            {/* Architectural Arch Alcove Container */}
-            <div className="w-[250px] sm:w-[300px] h-[270px] sm:h-[320px] bg-gradient-to-b from-[#24170e] via-[#1c110a] to-[#140b07] border border-[#7b581d]/35 rounded-t-[120px] rounded-b-[40px] shadow-2xl flex flex-col items-center justify-center p-3 relative">
-              <div className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] rounded-full overflow-hidden shadow-2xl border-2 border-secondary/40 ring-4 ring-[#140b07]/80">
-                <img 
-                  src="/images/desi_classics.png" 
-                  alt="Signature Slow-Cooked Kunna Gosht" 
-                  className="w-full h-full object-cover scale-105" 
-                />
-              </div>
-              <span className="text-[9px] uppercase tracking-[0.25em] text-[#ffd089] mt-2 font-semibold">
-                Slow-Fired Kunna Gosht
+            {/* ─── ARCH SHAPE: Starts at top-0 (Navbar) and extends downwards to line up flush with Reserve Table button ─── */}
+            <div className="absolute top-0 bottom-0 left-4 sm:left-6 lg:left-[140px] xl:left-[160px] w-[140px] sm:w-[220px] lg:w-[340px] xl:w-[360px] bg-gradient-to-b from-[#26180e] via-[#1f130b] to-[#160d08] border-x border-b border-[#7b581d]/35 z-0 flex flex-col items-center justify-center pt-20 sm:pt-24 lg:pt-28 pb-4 sm:pb-6 px-2 sm:px-3 lg:px-4 rounded-b-full shadow-2xl pointer-events-none">
+              <FadeIn delay={0.1}>
+                <div className="w-[105px] h-[105px] sm:w-[170px] sm:h-[170px] lg:w-[265px] lg:h-[265px] xl:w-[285px] xl:h-[285px] relative pointer-events-auto shrink-0 rounded-full overflow-hidden shadow-2xl border sm:border-2 border-secondary/40 ring-2 sm:ring-4 ring-[#160d08] bg-[#160d08]/90 flex items-center justify-center p-2 sm:p-4 group">
+                  <img 
+                    src="/logo.png" 
+                    alt="Junoon Pakistani Restaurant Royal Crest" 
+                    className="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)] group-hover:scale-105 transition-transform duration-700" 
+                  />
+                </div>
+              </FadeIn>
+              <span className="text-[8.5px] sm:text-[10px] uppercase tracking-[0.25em] text-[#ffd089] mt-2 sm:mt-3 font-semibold text-center leading-tight">
+                Royal Gastronomy
+              </span>
+              <span className="hidden sm:block text-[8px] sm:text-[9px] text-[#a89d91] tracking-wider uppercase font-light text-center">
+                Gulberg &bull; Lahore
               </span>
             </div>
-          </div>
-            
-          {/* Main Hero Text Block */}
-          <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full px-5 sm:px-8 lg:px-0 lg:pl-[570px] xl:pl-[610px] lg:pr-12 z-10 mt-4 lg:mt-0 max-w-[1440px]">
-            <FadeIn>
-              <AnimatedHeading tag="h1" className="font-display-xl text-[44px] sm:text-[54px] lg:text-[62px] xl:text-[70px] text-primary leading-[1.05] tracking-tight mb-3 sm:mb-4 uppercase font-normal" delay={0.1}>
-                Junoon
-              </AnimatedHeading>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <p className="font-title-editorial italic text-on-surface-variant max-w-[480px] leading-relaxed mb-6 sm:mb-7 text-[17px] sm:text-[19px] lg:text-[20px] font-normal mx-auto lg:mx-0">
-                A celebration of Pakistan&apos;s sacred communal table, slow-fired over wild charcoal and steeped in Mughal grandeur.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 sm:gap-4 mb-4 sm:mb-6 w-full sm:w-auto">
-                <Link href="/menu" className="h-[46px] px-7 bg-transparent border border-secondary/50 text-primary hover:border-secondary hover:bg-secondary/5 transition-all font-label-uppercase text-[11px] tracking-[0.2em] uppercase flex items-center justify-center font-semibold w-full sm:w-auto shadow-sm">
-                  Explore Menu
-                </Link>
-                <Link href="/reservations" className="h-[46px] px-7 bg-primary text-secondary-fixed hover:bg-tertiary-container hover:text-on-tertiary transition-all font-label-uppercase text-[11px] tracking-[0.2em] uppercase flex items-center justify-center font-semibold shadow-md w-full sm:w-auto">
-                  Reserve A Table
-                </Link>
+
+            {/* ─── HERO CONTENT: Alongside the Arch ─── */}
+            <div className="relative z-10 flex flex-row items-center lg:items-start min-h-[220px] sm:min-h-[260px] lg:min-h-[360px]">
+
+              {/* Spacer on mobile/tablet to give room for the absolute top-0 arch */}
+              <div className="shrink-0 w-[140px] sm:w-[220px] lg:hidden pointer-events-none" aria-hidden="true" />
+
+              {/* Main Hero Brand Block */}
+              <div className="flex-1 flex flex-col items-start text-left pl-3 sm:pl-6 lg:pl-[520px] xl:pl-[560px] justify-center pb-1 sm:pb-0">
+                <FadeIn>
+                  <div className="inline-flex items-center gap-2 mb-1 sm:mb-2">
+                    <span className="w-4 sm:w-6 h-[1px] bg-secondary" />
+                    <span className="font-caption-folio text-secondary uppercase tracking-[0.25em] text-[9px] sm:text-[11px] font-semibold">
+                      Gulberg &bull; Lahore
+                    </span>
+                    <span className="w-4 sm:w-6 h-[1px] bg-secondary hidden sm:inline-block" />
+                  </div>
+                  <AnimatedHeading tag="h1" className="font-display-xl text-[34px] sm:text-[48px] lg:text-[62px] xl:text-[70px] text-primary leading-[1.02] tracking-tight mb-2 sm:mb-4 uppercase font-normal" delay={0.1}>
+                    Junoon
+                  </AnimatedHeading>
+                </FadeIn>
+                <FadeIn delay={0.2}>
+                  <p className="font-title-editorial italic text-on-surface-variant max-w-[480px] leading-snug sm:leading-relaxed mb-3.5 sm:mb-6 text-[13px] sm:text-[17px] lg:text-[20px] font-normal">
+                    A celebration of Pakistan&apos;s sacred communal table, slow-fired over wild charcoal and steeped in Mughal grandeur.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3.5 w-full sm:w-auto">
+                    <Link href="/menu" className="h-[38px] sm:h-[46px] px-4 sm:px-7 bg-transparent border border-secondary/50 text-primary hover:border-secondary hover:bg-secondary/5 transition-all font-label-uppercase text-[10px] sm:text-[11px] tracking-[0.18em] uppercase flex items-center justify-center font-semibold shadow-xs whitespace-nowrap">
+                      Explore Menu
+                    </Link>
+                    <Link href="/reservations" className="h-[38px] sm:h-[46px] px-4 sm:px-7 bg-primary text-secondary-fixed hover:bg-tertiary-container hover:text-on-tertiary transition-all font-label-uppercase text-[10px] sm:text-[11px] tracking-[0.18em] uppercase flex items-center justify-center font-semibold shadow-md whitespace-nowrap">
+                      Reserve Table
+                    </Link>
+                  </div>
+                </FadeIn>
               </div>
-            </FadeIn>
-          </div>
 
-          {/* ─── FOUR SIGNATURE-DISH CARDS (Integrated into Hero Section) ─── */}
-          <div className="w-full max-w-[1440px] mx-auto lg:pl-[120px] xl:pl-[140px] lg:pr-12 px-4 sm:px-6 relative z-20 mt-8 sm:mt-10 lg:mt-12">
-            {/* Scroll indicator for mobile swipe */}
-            <div className="flex sm:hidden items-center justify-between mb-3 px-1 text-[10px] uppercase tracking-[0.2em] text-secondary font-semibold">
-              <span>Signature Highlights</span>
-              <span className="text-outline text-[9px] font-normal">Swipe →</span>
             </div>
 
-            {/* Horizontal Swipe Carousel on Mobile, Responsive Grid on Desktop */}
-            <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 xl:gap-6 overflow-x-auto sm:overflow-visible pb-3 sm:pb-0 snap-x snap-mandatory no-scrollbar pt-6">
-              {[
-                { img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDy-cb0fl1hzwv_mtclUKFH_qGHRbXN5NLL3zZjGHlYRN5SLaUwPESp-rMXxI-5QdGP1oQRIk8EktwXB1LkEsxFUNge0t3u8LeZeAwhM6LXIgXYncUbq-U2DblmY6yvxpDW4ryfGwZOokjybVnzklu45QjWqmlysx5bMCnr3MoUQjeJV4s5AuoMTVbCaa50KyGitK3znhCCvOY8IceiiTmV8tdRpSq701tXgebi9qE', name: 'Shinwari Karahi', desc: 'Young mountain sheep', price: '3,850' },
-                { img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCsEOORMF4ZapO1F5qgiLRFl93mJsnvtP3YIuhErsauJiITzG5jaP205pFxQifoJTLnl00d6FPn0tcH8rX7ucA_n0y9UxRB3GiyE4ymIXYIKo3tH03kt1SLhJof8-2DxVu9P4gCKfCxrLhL0T_PjtMjMwhQUU3zNy632vvg96KdlZKWRwGeeXJj3FVLx0OiBRSdLkXTam1wJgV8iXNhOT4JL5q_CAU_0WWvfObqfI0', name: 'Murgh Malai Boti', desc: 'Charred over babool', price: '2,450' },
-                { img: '/images/desi_classics.png', name: 'Kunna Gosht', desc: 'Subterranean braise', price: '3,400' },
-                { img: '/images/peshawar.png', name: 'Peshawari Chapli', desc: 'Pressed on broad tawas', price: '2,100' },
-              ].map((dish, i) => (
-                <article 
-                  key={i} 
-                  className="w-[260px] sm:w-auto shrink-0 sm:shrink snap-center bg-gradient-to-b from-[#221c17] to-[#181310] border border-[#7b581d]/25 hover:border-secondary/60 text-white rounded-[24px] p-4 sm:p-5 pt-[52px] sm:pt-[58px] relative flex flex-col hover:-translate-y-1.5 transition-all duration-300 group shadow-xl hover:shadow-2xl"
-                >
-                  {/* Floating Circular Image Top-Left */}
-                  <div className="absolute -top-7 sm:-top-8 left-3 sm:-left-2 w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden shadow-2xl border-2 border-secondary/40 ring-4 ring-[#221c17] group-hover:rotate-6 group-hover:scale-105 transition-all duration-500">
-                    <img src={dish.img} alt={dish.name} className="w-full h-full object-cover scale-110" />
-                  </div>
-                  {/* Price Top-Right */}
-                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
-                    <span className="font-headline-sm text-[#ffd089] text-[15px] sm:text-[16px] font-medium tracking-wide">PKR {dish.price}</span>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="mt-2 flex flex-col h-full justify-between z-10">
-                    <div>
-                      <h3 className="font-headline-sm text-white mb-1 text-[16px] sm:text-[17px] text-center group-hover:text-secondary-fixed transition-colors tracking-wide">{dish.name}</h3>
-                      <p className="font-body-sm text-[#a89d91] text-center leading-snug text-[11px] sm:text-[12px]">{dish.desc}</p>
-                    </div>
-                    <div className="flex items-end justify-between mt-3.5 sm:mt-4 pt-2 border-t border-white/5">
-                      <p className="font-caption-folio text-secondary/80 uppercase tracking-widest text-[9px] font-semibold">Signature</p>
-                      <div className="w-0 h-0 border-t-[5px] border-t-transparent border-l-[9px] border-l-[#ffd089] border-b-[5px] border-b-transparent group-hover:translate-x-1 transition-transform cursor-pointer"></div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-            
-            {/* Carousel Dots */}
-            <div className="flex items-center justify-center gap-2.5 sm:gap-3 mt-6 sm:mt-8">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#B38A4A] ring-2 ring-[#B38A4A]/30"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-secondary/30 hover:bg-secondary transition-colors cursor-pointer"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-secondary/30 hover:bg-secondary transition-colors cursor-pointer"></div>
-              <div className="w-2.5 h-2.5 rounded-full bg-secondary/30 hover:bg-secondary transition-colors cursor-pointer"></div>
-            </div>
           </div>
+
+          {/* ─── FOUR SIGNATURE-DISH CARDS (Responsive Carousel & Grid) ─── */}
+          <SignatureDishesCarousel />
         </section>
 
         {/* ─── PHASE 5: HISTORY / OUR STORY (BROWN SECTION #2) ─── */}

@@ -353,7 +353,7 @@ export default function OurStoryPage() {
 </div>
 {/*  Provenance Stamp Badge  */}
 <div className="absolute -top-4 -left-4 bg-primary text-secondary-fixed p-space-sm shadow-md">
-<span className="font-caption-folio text-caption-folio uppercase tracking-[0.28em] block">Founder's Note</span>
+<span className="font-caption-folio text-caption-folio uppercase tracking-[0.28em] block">Founder&apos;s Note</span>
 <span className="font-label-uppercase text-label-uppercase text-on-primary">Est. Lahore 2021</span>
 </div>
 </div>

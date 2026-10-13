@@ -319,7 +319,7 @@ export default function ContactPage() {
 <span className="material-symbols-outlined text-secondary text-[22px]">check_circle</span>
 <div>
 <p className="font-title-editorial text-title-editorial text-primary">Inquiry Delivered with Grace</p>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Our Maître d' will be in contact shortly via your preferred channel.</p>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Our Maître d&apos; will be in contact shortly via your preferred channel.</p>
 </div>
 </div>
 </form>
